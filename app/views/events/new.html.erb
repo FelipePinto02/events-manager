@@ -1,0 +1,14 @@
+<h1>New Event</h1>
+
+<div class="form-container">
+  <%= form_with model: @event do |form| %>
+  <div class="form-section">
+    <%= form.label :location %>
+    <%= form.text_field :location %>
+  </div>
+  <div class="form-section">
+    <%= form.label :date %>
+    <%= form.date_field :date %>
+  </div>
+  <%= form.submit "Create Event" %>
+</div>
