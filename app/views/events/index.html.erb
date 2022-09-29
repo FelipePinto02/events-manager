@@ -3,14 +3,21 @@
 <div class="events-container">
   <div class="future-events">
     <h2>Future Events</h2>
-    <% @future_events.each do |event| %>
-      <p class="event-location"> <%= event.location %></p>
-    <% end %>
+    <ul>
+      <% @future_events.each do |event| %>
+        <li><%= link_to event.location, event %></li>
+      <% end %>
+    </ul>
   </div>
   <div class="past-events">
     <h2>Past Events</h2>
-    <% @past_events.each do |event| %>
-      <p class="event-location"> <%= event.location %></p>
-    <% end %>
+    <ul>
+      <% @past_events.each do |event| %>
+        <li><%= link_to event.location, event %></li>
+      <% end %>
+    </ul>
   </div>
 </div>
+
+<%= link_to 'Create Event', new_event_path %>
+<%= link_to current_user.username, current_user %>

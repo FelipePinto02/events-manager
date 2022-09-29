@@ -1,7 +1,10 @@
 <h1>Hello, <%= @user.username %>! </h1>
+
+<%= link_to root_path do %><h3>Events Manager</h3><% end %>
+
 <p>Your events:</p>
 <ul>
   <% @user.created_events.each do |event| %>
-    <li> <%= event %> </li>
+    <li> <%= link_to event.location, event %> </li>
   <% end %>
 </ul>
