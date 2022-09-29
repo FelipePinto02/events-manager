@@ -3,13 +3,13 @@
 <div class="events-container">
   <div class="future-events">
     <h2>Future Events</h2>
-    <% @events.where('date > ?', Time.now).each do |event| %>
+    <% @future_events.each do |event| %>
       <p class="event-location"> <%= event.location %></p>
     <% end %>
   </div>
   <div class="past-events">
     <h2>Past Events</h2>
-    <% @events.where('date < ?', Time.now).each do |event| %>
+    <% @past_events.each do |event| %>
       <p class="event-location"> <%= event.location %></p>
     <% end %>
   </div>
