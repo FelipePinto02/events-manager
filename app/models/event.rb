@@ -1,6 +1,6 @@
 class Event < ApplicationRecord
-  scope :past, -> { where('date < ?', Time.now) }
-  scope :future, -> { where('date > ?', Time.now) }
+  scope :past, -> { where('date < ?', Date.today) }
+  scope :future, -> { where('date >= ?', Date.today) }
 
   belongs_to :creator, class_name: 'User'
 

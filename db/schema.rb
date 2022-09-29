@@ -10,23 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_28_230327) do
-  create_table "event_attendances", id: false, force: :cascade do |t|
+ActiveRecord::Schema[7.0].define(version: 2022_09_29_232644) do
+  create_table "event_attendances", force: :cascade do |t|
     t.integer "attended_event_id"
     t.integer "attendee_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index "\"attendee\"", name: "index_event_attendances_on_attendee"
+    t.integer "status", default: 0
     t.index ["attended_event_id"], name: "index_event_attendances_on_attended_event_id"
-  end
-
-  create_table "event_attendees", id: false, force: :cascade do |t|
-    t.integer "attended_event_id"
-    t.integer "attendee_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["attended_event_id"], name: "index_event_attendees_on_attended_event_id"
-    t.index ["attendee_id"], name: "index_event_attendees_on_attendee_id"
+    t.index ["attendee_id"], name: "index_event_attendances_on_attendee_id"
   end
 
   create_table "events", force: :cascade do |t|

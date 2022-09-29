@@ -1,0 +1,10 @@
+<h1>Available Users:</h1>
+
+<% @users.each do |user| %>
+  <div class="user-details">
+    <% next if user == current_user %>
+
+    <%= user.username %>
+    <%= button_to 'Invite', event_attendances_path(event_id: params[:event_id], user_id: user.id) %>
+  </div>
+<% end %>

@@ -1,7 +1,5 @@
 <h1>Event Name</h1>
 
-<%= current_user.username %>
-
 <%= link_to root_path do %><h3>Events Manager</h3><% end %>
 
 <div class="event-details">
@@ -10,20 +8,29 @@
   <p>Event date: <%= @event.date %></p>
   <h2>Event Attendees:</h2>
   <ul>
-    <% @event.attendees.each do |attendee| %>
+    <% @event.attendees.where('status = 1').each do |attendee| %>
       <li> <%= attendee.username %> </li>
     <% end %>
   </ul>
-  <% if @event.attendees.include? current_user %>
-    <%= button_to 'Cancel Attendance',  event_attendance_path(event_id: @event.id), method: :delete %>
-  <% else %>
-    <%= button_to 'Attend', event_attendances_path(event_id: @event.id) %>
-  <% end %>
+  <h2>Invited Guests:</h2>
+  <ul>
+    <% @event.attendees.where('status = 0').each do |attendee| %>
+      <li> <%= attendee.username %> </li>
+    <% end %>
+  </ul>
 </div>
 
 <% if @event.creator == current_user %>
   <div class="control-btns">
+    <%= link_to users_path(event_id: @event.id) do %> <button>Send Invites</button> <% end %>
     <%= link_to edit_event_path do %> <button>Edit Event</button> <% end %>
     <%= button_to 'Cancel Event', event_path(@event), method: :delete %>
   </div>
+<% else %>
+  <% attendance = EventAttendance.find_by(attendee_id: current_user.id, attended_event_id: @event.id) %>
+  <% if attendance.nil? || attendance.invited? %>
+    <%= button_to 'Attend', event_attendance_path(event_id: @event.id), method: :patch %>
+  <% else %>
+    <%= button_to 'Cancel Attendance', event_attendance_path(event_id: @event.id), method: :patch %>
+  <% end %>
 <% end %>
