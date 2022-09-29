@@ -4,5 +4,11 @@
   <p>Event creator: <%= @event.creator.username %></p>
   <p>Event location: <%= @event.location %></p>
   <p>Event date: <%= @event.date %></p>
+  <h2>Event Attendees:</h2>
+  <ul>
+    <% @event.attendees.each do |attendee| %>
+      <li> <%= attendee.username %> </li>
+    <% end %>
+  </ul>
   <%= button_to 'Attend', event_attendances_path(attended_event_id: @event.id) %>
 </div>
