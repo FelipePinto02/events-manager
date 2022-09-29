@@ -1,7 +1,16 @@
 <h1>Events Manager</h1>
 
 <div class="events-container">
-  <% @events.each do |event| %>
-    <p class="event-location"> <%= event.location %></p>
-  <% end %>
+  <div class="future-events">
+    <h2>Future Events</h2>
+    <% @events.where('date > ?', Time.now).each do |event| %>
+      <p class="event-location"> <%= event.location %></p>
+    <% end %>
+  </div>
+  <div class="past-events">
+    <h2>Past Events</h2>
+    <% @events.where('date < ?', Time.now).each do |event| %>
+      <p class="event-location"> <%= event.location %></p>
+    <% end %>
+  </div>
 </div>
