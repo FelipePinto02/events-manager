@@ -20,4 +20,6 @@
 </div>
 
 <%= link_to 'Create Event', new_event_path %>
-<%= link_to current_user.username, current_user %>
+<% if user_session %>
+  <%= link_to current_user.username, current_user %>
+<% end %>
