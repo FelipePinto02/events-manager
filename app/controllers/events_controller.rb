@@ -20,4 +20,10 @@ class EventsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+
+  private
+
+  def events_params
+    params.require(:event).permit(:location, :date)
+  end
 end

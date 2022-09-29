@@ -1,7 +1,8 @@
 <h1>Event Name</h1>
 
 <div class="event-details">
-  <p>Event creator: <%= @event.creator %></p>
+  <p>Event creator: <%= @event.creator.username %></p>
   <p>Event location: <%= @event.location %></p>
   <p>Event date: <%= @event.date %></p>
+  <%= button_to 'Attend', event_attendances_path(attended_event_id: @event.id) %>
 </div>
