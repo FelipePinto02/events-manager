@@ -23,3 +23,5 @@
 <% if user_session %>
   <%= link_to current_user.username, current_user %>
 <% end %>
+
+<%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
