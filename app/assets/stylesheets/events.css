@@ -1,0 +1,63 @@
+.events-container .header-container {
+  box-shadow: 0px 3px 5px #00000038;
+  background-color: aliceblue;
+}
+
+.events-container header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0px 85px 0px 65px;
+  padding: 10px;
+}
+
+.app-title {
+  font-size: 2.2rem;
+}
+
+.events-container nav {
+  display: flex;
+  gap: 20px;
+}
+
+.events-container nav a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.events-container nav a:visited {
+  color: inherit;
+}
+
+.events-container button {
+  padding: 8px;
+  font-size: 1.1rem;
+  border-radius: 7px;
+  border: none;
+}
+
+.events-container button:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.login-btn {
+  background-color: #3b8eabe0;
+  color: white;
+}
+
+.sign-up-btn {
+  background-color: #2b9b1ab3;
+  color: white;
+}
+
+.profile-btn {
+  background-color: #30a3ff;
+  min-width: 60px;
+  color: white;
+}
+
+.logout-btn {
+  background-color: #eb5b26;
+  color: white;
+}
