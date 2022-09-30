@@ -3,7 +3,7 @@ class EventAttendancesController < ApplicationController
     invited_user = User.find(params[:user_id])
     invited_user.event_attendances.build(attended_event_id: params[:event_id]).save
 
-    redirect_to event_path(params[:event_id])
+    redirect_to users_path(event_id: params[:event_id])
   end
 
   def update
@@ -22,6 +22,6 @@ class EventAttendancesController < ApplicationController
     event = Event.find(params[:event_id])
     event.attendees.delete(params[:user_id])
 
-    redirect_to event_path(params[:event_id])
+    redirect_to users_path(event_id: params[:event_id])
   end
 end
