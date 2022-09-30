@@ -5,6 +5,12 @@
     <% next if user == current_user %>
 
     <%= user.username %>
-    <%= button_to 'Invite', event_attendances_path(event_id: params[:event_id], user_id: user.id) %>
+    <% if Event.find(params[:event_id]).attendees.include? user %>
+      <% attendance = EventAttendance.find_by(attendee_id: user.id, attended_event_id: params[:event_id]) %>
+      <%= button_to 'Cancel Invite', event_attendance_path(id: attendance.id, event_id: params[:event_id], user_id: user.id), method: :delete %>
+    <% else %>
+      <%= button_to 'Invite', event_attendances_path(event_id: params[:event_id], user_id: user.id) %>
+    <% end %>
+
   </div>
 <% end %>
