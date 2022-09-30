@@ -1,19 +1,30 @@
 <div class="form-container">
   <%= form_with model: event do |form| %>
+    <% if event.errors.any? %>
+      <div class="errors-explanation">
+        <h2> <%= pluralize(event.errors.count, 'error') %> prohibited this event from being saved: </h2>
+        <ul>
+          <% event.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
     <div class="form-section">
-      <%= form.label :name %>:
+      <%= form.label :name, 'Name:' %>
       <%= form.text_field :name %>
     </div>
     <div class="form-section">
-      <%= form.label :description %>:
+      <%= form.label :description, 'Description:' %>
       <%= form.text_area :description %>
     </div>
     <div class="form-section">
-      <%= form.label :location %>:
+      <%= form.label :location, 'Location:' %>
       <%= form.text_field :location %>
     </div>
     <div class="form-section">
-      <%= form.label :date %>:
+      <%= form.label :date, 'Date:' %>
       <%= form.date_field :date %>
     </div>
     <%= form.submit %>

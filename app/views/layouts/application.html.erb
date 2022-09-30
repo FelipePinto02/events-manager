@@ -11,6 +11,12 @@
   </head>
 
   <body>
+    <div class="alert">
+      <%= flash[:alert] %>
+    </div>
+    <div class="success">
+      <%= flash[:notice] %>
+    </div>
     <%= yield %>
   </body>
 </html>
