@@ -1,9 +1,9 @@
-.events-container .header-container {
+.events-index-container .header-container {
   box-shadow: 0px 3px 5px #00000038;
   background-color: aliceblue;
 }
 
-.events-container header {
+.events-index-container header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -12,52 +12,128 @@
 }
 
 .app-title {
-  font-size: 2.2rem;
+  font-size: 2.4rem;
 }
 
-.events-container nav {
+.events-index-container nav {
   display: flex;
   gap: 20px;
 }
 
-.events-container nav a {
+.events-index-container a {
   text-decoration: none;
   color: inherit;
 }
 
-.events-container nav a:visited {
+.events-index-container nav a:visited {
   color: inherit;
 }
 
-.events-container button {
+.events-index-container button {
   padding: 8px;
   font-size: 1.1rem;
   border-radius: 7px;
   border: none;
 }
 
-.events-container button:hover {
+.events-index-container button:hover {
   cursor: pointer;
   transform: scale(1.05);
 }
 
-.login-btn {
+.events-index-container .login-btn {
   background-color: #3b8eabe0;
   color: white;
 }
 
-.sign-up-btn {
+.events-index-container .sign-up-btn {
   background-color: #2b9b1ab3;
   color: white;
 }
 
-.profile-btn {
+.events-index-container .profile-btn {
   background-color: #30a3ff;
   min-width: 60px;
   color: white;
 }
 
-.logout-btn {
+.events-index-container .logout-btn {
   background-color: #eb5b26;
   color: white;
+}
+
+.events-index-container .events-container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 60%;
+  margin: 60px auto 0px;
+  background-color: #d7dee542;
+  box-shadow: 0px 0px 3px 1px #00000033;
+  border-radius: 10px;
+  max-height: 800px;
+}
+
+.events-index-container .events-list {
+  padding: 20px 50px;
+  width: 50%;
+  text-align: center;
+  overflow: auto;
+}
+
+.events-index-container .division {
+  background-color: black;
+  padding: 0.5px;
+  margin: 5px 0px;
+}
+
+.events-index-container .section-title {
+  font-size: 2rem;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid grey;
+}
+
+.events-index-container .event-card {
+  background-color: #e4f0fb;
+  margin-bottom: 20px;
+  border: 2px solid #4f5476;
+}
+
+.events-index-container .card-title,
+.events-index-container .card-bottom {
+  background-color: #f0ffffc2;
+  padding: 12px;
+}
+
+.events-index-container .card-title {
+  border-bottom: 0.8px solid #808080ab;
+}
+
+.events-index-container .event-name {
+  font-size: 1.3rem;
+}
+
+.events-index-container .card-description {
+  padding: 30px;
+  font-size: 1.2rem;
+}
+
+.events-index-container .card-bottom {
+  display: flex;
+  justify-content: space-between;
+  border-top: 0.8px solid #808080ab;
+}
+
+.events-index-container .date,
+.events-index-container .location {
+  margin: 0px 15px;
+}
+
+.events-index-container .create-event-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.events-index-container .create-event {
+  background-color: #a8c3f3;
 }
