@@ -169,13 +169,15 @@
   border-radius: 15px;
 }
 
-.form-title {
+.form-title,
+.user-greeting {
   padding: 15px;
   margin: 0px 0px 10px;
   text-align: center;
 }
 
-.form-title-text {
+.form-title-text,
+.user-greeting-text {
   font-size: 2.4rem;
   margin: 0px 50px;
   padding-bottom: 8px;

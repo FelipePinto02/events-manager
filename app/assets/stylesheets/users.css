@@ -13,3 +13,39 @@
 .links a:hover {
   color: var(--light-blue);
 }
+
+.user-profile-container {
+  width: 80%;
+  margin: 100px auto;
+}
+
+.user-greeting-text {
+  padding-bottom: 12px;
+}
+
+.user-profile-container .user-events {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px;
+}
+
+.user-profile-container .user-events-title {
+  font-size: 1.6rem;
+  margin-bottom: 25px;
+}
+
+.user-profile-container .event-link {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.user-profile-container .event-link:hover {
+  transform: scale(1.05);
+  text-decoration: underline;
+}
+
+.user-profile-container .event-link a {
+  text-decoration: none;
+  color: inherit;
+}
