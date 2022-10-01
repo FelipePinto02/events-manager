@@ -2,6 +2,7 @@ class CreateEventAttendances < ActiveRecord::Migration[7.0]
   def change
     create_table :event_attendances, id: false do |t|
       t.integer :attended_event_id
+      t.integer :attendee
       t.integer :attendee_id
 
       t.timestamps
