@@ -73,3 +73,90 @@
 .events-index-container .create-event {
   background-color: #a8c3f3;
 }
+
+.events-show-container .event-container {
+  width: 50%;
+  margin: 50px auto;
+  text-align: center;
+  background-color: #e4f0fb3d;
+  box-shadow: 0px 0px 3px 1px #00000033;
+  position: relative;
+}
+
+.events-show-container .event-first-section,
+.events-show-container .event-second-section,
+.events-show-container .event-third-section {
+  margin: 0px 20px 40px;
+  padding: 60px 0px;
+  border-bottom: 0.8px solid #808080ab;
+}
+
+.events-show-container .event-first-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.events-show-container .event-name {
+  font-size: 2.4rem;
+}
+
+.events-show-container .event-host {
+  font-size: 1.6rem;
+  color: #878484;
+}
+
+.events-show-container .event-description {
+  font-size: 1.3rem;
+}
+
+.events-show-container .event-second-section,
+.events-show-container .event-third-section {
+  display: flex;
+  justify-content: space-around;
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding-top: 0px;
+}
+
+.events-show-container .invited,
+.events-show-container .attendees {
+  max-height: 120px;
+  overflow: auto;
+  padding: 0px 20px;
+}
+
+.events-show-container .details-text {
+  font-size: 1.4rem;
+  font-weight: normal;
+  margin-top: 5px;
+}
+
+.events-show-container .event-btn {
+  width: 20%;
+  padding: 15px;
+  margin-bottom: 25px;
+  background-color: #a8c3f3;
+  font-size: 1.3rem;
+}
+
+.events-show-container .cancel-btn {
+  background-color: #e94362c7;
+}
+
+.control-btns {
+  display: flex;
+  gap: 20px;
+  position: absolute;
+  top: 20px;
+  right: 10px;
+}
+
+.control-btns button {
+  padding: 8px;
+  font-size: 0.9rem;
+}
+
+.control-btns .edit-btn {
+  background-color: #c2efc5;
+}

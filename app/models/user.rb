@@ -10,4 +10,7 @@ class User < ApplicationRecord
 
   validates :username, :password, presence: true
   validates :password, length: { minimum: 6 }
+
+  scope :accepted, -> { where('status = 1') }
+  scope :invited, -> { where('status = 0') }
 end

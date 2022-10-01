@@ -1,0 +1,14 @@
+<% if event.creator == current_user %>
+  <%= link_to users_path(event_id: @event.id) do %> <button class='event-btn'>Send Invites</button> <% end %>
+  <div class="control-btns">
+    <%= link_to edit_event_path do %> <button class="edit-btn">Edit</button> <% end %>
+    <%= button_to 'Cancel', event_path(@event), class: 'cancel-btn', method: :delete %>
+  </div>
+<% else %>
+  <% attendance = EventAttendance.find_by(attendee_id: current_user.id, attended_event_id: @event.id) %>
+  <% if attendance.nil? || attendance.invited? %>
+    <%= button_to 'Attend', event_attendance_path(event_id: @event.id), class: 'event-btn', method: :patch %>
+  <% else %>
+    <%= button_to 'Cancel Attendance', event_attendance_path(event_id: @event.id), class: 'event-btn cancel-btn', method: :patch %>
+  <% end %>
+<% end %>

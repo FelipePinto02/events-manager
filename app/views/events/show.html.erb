@@ -1,36 +1,27 @@
-<h1> <%= @event.name %> </h1>
-
-<%= link_to root_path do %><h3>Events Manager</h3><% end %>
-
-<div class="event-details">
-  <p>Event creator: <%= @event.creator.username %></p>
-  <p>Event location: <%= @event.location %></p>
-  <p>Event date: <%= @event.date %></p>
-  <h2>Event Attendees:</h2>
-  <ul>
-    <% @event.attendees.where('status = 1').each do |attendee| %>
-      <li> <%= attendee.username %> </li>
-    <% end %>
-  </ul>
-  <h2>Invited Guests:</h2>
-  <ul>
-    <% @event.attendees.where('status = 0').each do |attendee| %>
-      <li> <%= attendee.username %> </li>
-    <% end %>
-  </ul>
+<div class="events-show-container">
+  <div class="event-container">
+    <div class="event-first-section">
+      <div>
+        <h1 class="event-name"> <%= @event.name %> </h1>
+        <h2 class="event-host">Hosted by: <%= @event.creator.username %></h2>
+      </div>
+      <p class="event-description"> <%= @event.description %> </p>
+    </div>
+    <div class="event-second-section">
+      <div class="section-details">
+        <p>Event Location:</p>
+        <p class="details-text"><%= @event.location %></p>
+      </div>
+      <div class="section-details">
+        <p>Event Date:</p>
+        <p class="details-text"><%= @event.date %></p>
+      </div>
+    </div>
+    <div class="event-third-section">
+      <%= render 'event_attendance', event: @event %>
+    </div>
+    <div class="event-fourth-section">
+      <%= render 'event_buttons', event: @event %>
+    </div>
 </div>
 
-<% if @event.creator == current_user %>
-  <div class="control-btns">
-    <%= link_to users_path(event_id: @event.id) do %> <button>Send Invites</button> <% end %>
-    <%= link_to edit_event_path do %> <button>Edit Event</button> <% end %>
-    <%= button_to 'Cancel Event', event_path(@event), method: :delete %>
-  </div>
-<% else %>
-  <% attendance = EventAttendance.find_by(attendee_id: current_user.id, attended_event_id: @event.id) %>
-  <% if attendance.nil? || attendance.invited? %>
-    <%= button_to 'Attend', event_attendance_path(event_id: @event.id), method: :patch %>
-  <% else %>
-    <%= button_to 'Cancel Attendance', event_attendance_path(event_id: @event.id), method: :patch %>
-  <% end %>
-<% end %>
