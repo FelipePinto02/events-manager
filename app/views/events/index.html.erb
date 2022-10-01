@@ -20,44 +20,14 @@
     <div class="events-list future-events">
       <h2 class="section-title">Future Events</h2>
         <% @future_events.each do |event| %>
-          <div class="event-card">
-            <div class="card-title">
-              <%= link_to event do %><h3 class="event-name"><%= event.name %></h3><% end %>
-            </div>
-            <div class="card-description">
-              <%= event.description %>
-            </div>
-            <div class="card-bottom">
-              <div class="location">
-                <%= event.location %>
-              </div>
-              <div class="date">
-                <%= event.date %>
-              </div>
-            </div>
-          </div>
+          <%= render 'event_details', event: event %>
         <% end %>
     </div>
     <div class="division"></div>
     <div class="events-list past-events">
       <h2 class="section-title">Past Events</h2>
         <% @past_events.each do |event| %>
-          <div class="event-card">
-            <div class="card-title">
-              <%= link_to event do %><h3 class="event-name"><%= event.name %></h3><% end %>
-            </div>
-            <div class="card-description">
-              <%= event.description %>
-            </div>
-            <div class="card-bottom">
-              <div class="location">
-                <%= event.location %>
-              </div>
-              <div class="date">
-                <%= event.date %>
-              </div>
-            </div>
-          </div>
+          <%= render 'event_details', event: event %>
         <% end %>
     </div>
   </div>
