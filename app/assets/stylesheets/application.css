@@ -25,7 +25,9 @@
   --grey-border: #808080ab;
   --black-box-shadow: #00000033;
   --grey-event-card-background: #d7dee542;
-  --blue-header-btn: #30a3ff;
+  --light-blue: #30a3ff;
+  --orange: #eb5b26;
+  --input-outline: #0000004f;
 }
 
 body {
@@ -78,7 +80,7 @@ input[type="submit"]:hover {
 }
 
 .login-btn {
-  background-color: var(--blue-header-btn);
+  background-color: var(--light-blue);
   color: white;
 }
 
@@ -88,12 +90,40 @@ input[type="submit"]:hover {
 }
 
 .profile-btn {
-  background-color: var(--blue-header-btn);
+  background-color: var(--light-blue);
   min-width: 60px;
   color: white;
 }
 
 .logout-btn {
-  background-color: #eb5b26;
+  background-color: var(--orange);
   color: white;
+}
+
+.errors-explanation {
+  border: 1px solid black;
+  margin-bottom: 10px;
+}
+
+.errors-count {
+  background-color: crimson;
+  color: white;
+  border-bottom: 5px solid black;
+  padding: 10px;
+}
+
+.errors-description {
+  padding: 15px 30px;
+  background-color: white;
+  font-size: 1.05rem;
+}
+
+.errors-description li {
+  margin: 5px 0px;
+}
+
+.field_with_errors input,
+.field_with_errors textarea {
+  border: 1px solid var(--orange);
+  outline: none;
 }

@@ -163,7 +163,7 @@
 
 .form-container {
   width: 60%;
-  margin: 150px auto;
+  margin: 100px auto;
   background-color: var(--grey-event-card-background);
   box-shadow: 0px 0px 3px 1px var(--black-box-shadow);
   border-radius: 15px;
@@ -200,7 +200,8 @@
   flex-wrap: wrap;
 }
 
-.date-location-info div {
+.date-location-info .location,
+.date-location-info .date {
   display: flex;
   flex-direction: column;
 }
@@ -213,6 +214,15 @@
 .form-section textarea {
   padding: 5px 8px;
   margin-top: 5px;
+  width: 100%;
+  outline: none;
+  border: 0.1px solid var(--input-outline);
+  border-radius: 5px;
+}
+
+.form-section input:focus,
+.form-section textarea:focus {
+  border: 1px solid var(--light-blue);
 }
 
 .form-section input {
@@ -231,11 +241,11 @@
 }
 
 .location {
-  flex: 2;
+  flex: 2 auto;
 }
 
 .date {
-  flex: 1;
+  flex: 1 auto;
 }
 
 .form-section input[type="submit"] {

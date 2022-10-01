@@ -22,6 +22,7 @@ class EventsController < ApplicationController
 
       redirect_to @event
     else
+      flash[:alert] = 'Failed to create event.'
       render :new, status: :unprocessable_entity
     end
   end
@@ -38,6 +39,7 @@ class EventsController < ApplicationController
 
       redirect_to @event
     else
+      flash[:alert] = 'Failed to update event.'
       render :edit, status: :unprocessable_entity
     end
   end
