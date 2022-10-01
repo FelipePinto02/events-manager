@@ -25,6 +25,7 @@
   --grey-border: #808080ab;
   --black-box-shadow: #00000033;
   --grey-event-card-background: #d7dee542;
+  --blue-header-btn: #30a3ff;
 }
 
 body {
@@ -62,20 +63,22 @@ nav a:visited {
   color: inherit;
 }
 
-button {
+button,
+input[type="submit"] {
   padding: 8px;
   font-size: 1.1rem;
   border-radius: 7px;
   border: none;
 }
 
-button:hover {
+button:hover,
+input[type="submit"]:hover {
   cursor: pointer;
   transform: scale(1.05);
 }
 
 .login-btn {
-  background-color: #3b8eabe0;
+  background-color: var(--blue-header-btn);
   color: white;
 }
 
@@ -85,7 +88,7 @@ button:hover {
 }
 
 .profile-btn {
-  background-color: #30a3ff;
+  background-color: var(--blue-header-btn);
   min-width: 60px;
   color: white;
 }

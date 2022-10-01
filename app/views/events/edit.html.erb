@@ -1,5 +1,10 @@
-<h1>Edit Event</h1>
+<%= render 'shared/header' %>
 
-<%= link_to root_path do %><h3>Events Manager</h3><% end %>
-
-<%= render 'form', event: @event %>
+<div class="form-container">
+  <div class="form-title">
+    <h1 class="form-title-text">Edit Event</h1>
+  </div>
+  <div class="form-content">
+    <%= render 'form', event: @event %>
+  </div>
+</div>

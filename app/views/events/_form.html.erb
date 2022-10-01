@@ -1,4 +1,4 @@
-<div class="form-container">
+
   <%= form_with model: event do |form| %>
     <% if event.errors.any? %>
       <div class="errors-explanation">
@@ -19,14 +19,18 @@
       <%= form.label :description, 'Description:' %>
       <%= form.text_area :description %>
     </div>
-    <div class="form-section">
-      <%= form.label :location, 'Location:' %>
-      <%= form.text_field :location %>
+    <div class="form-section date-location-info">
+      <div class="location">
+        <%= form.label :location, 'Location:' %>
+        <%= form.text_field :location %>
+      </div>
+      <div class="date">
+        <%= form.label :date, 'Date:' %>
+        <%= form.date_field :date %>
+      </div>
     </div>
     <div class="form-section">
-      <%= form.label :date, 'Date:' %>
-      <%= form.date_field :date %>
+      <%= form.submit %>
     </div>
-    <%= form.submit %>
   <% end %>
-</div>
+
