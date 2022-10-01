@@ -257,3 +257,7 @@
   background-color: var(--blue-btn);
   margin: 20px auto 15px;
 }
+
+.return-event-link {
+  padding: 20px;
+}
