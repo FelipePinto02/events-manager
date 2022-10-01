@@ -9,6 +9,6 @@ class CreateEventAttendances < ActiveRecord::Migration[7.0]
 
 
   add_index :event_attendances, :attended_event_id
-  add_index :event_attendances, :attendee
+  add_index :event_attendances, :attendee_id
   end
 end
