@@ -1,28 +1,35 @@
-<h2>Log in</h2>
+<div class="form-container">
+  <div class="form-title">
+    <h1 class="form-title-text">Log in</h1>
+  </div>
 
-<div data-turbo="false">
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="field">
-      <%= f.label :username %><br />
-      <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
-    </div>
 
-    <div class="field">
-      <%= f.label :password %><br />
-      <%= f.password_field :password, autocomplete: "current-password" %>
-    </div>
+  <div class="form-content" data-turbo="false">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="form-section">
+        <%= f.label :username %>
+        <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
+      </div>
 
-    <% if devise_mapping.rememberable? %>
-      <div class="field">
-        <%= f.check_box :remember_me %>
-        <%= f.label :remember_me %>
+      <div class="form-section">
+        <%= f.label :password %>
+        <%= f.password_field :password, autocomplete: "current-password" %>
+      </div>
+
+      <% if devise_mapping.rememberable? %>
+        <div class="form-section">
+          <div class="remember-me">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+        </div>
+      <% end %>
+      <div class="form-section">
+        <%= f.submit "Log in" %>
+      </div>
+      <div class="form-section links">
+        <%= render "devise/shared/links" %>
       </div>
     <% end %>
-
-    <div class="actions">
-      <%= f.submit "Log in" %>
-    </div>
-  <% end %>
+  </div>
 </div>
-
-<%= render "devise/shared/links" %>

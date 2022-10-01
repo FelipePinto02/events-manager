@@ -56,12 +56,14 @@ nav {
   gap: 20px;
 }
 
-a {
+header a,
+.events-container a {
   text-decoration: none;
   color: inherit;
 }
 
-nav a:visited {
+header a,
+.events-container a {
   color: inherit;
 }
 

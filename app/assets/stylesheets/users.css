@@ -1,0 +1,15 @@
+.form-section input[type="checkbox"] {
+  width: 13px;
+  height: 13px;
+}
+
+.links a {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #135183;
+  margin: auto;
+}
+
+.links a:hover {
+  color: var(--light-blue);
+}
