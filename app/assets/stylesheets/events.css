@@ -141,7 +141,7 @@
 }
 
 .events-show-container .cancel-btn {
-  background-color: #e94362c7;
+  background-color: var(--red);
 }
 
 .control-btns {
@@ -170,14 +170,16 @@
 }
 
 .form-title,
-.user-greeting {
+.user-greeting,
+.list-title {
   padding: 15px;
   margin: 0px 0px 10px;
   text-align: center;
 }
 
 .form-title-text,
-.user-greeting-text {
+.user-greeting-text,
+.list-title-text {
   font-size: 2.4rem;
   margin: 0px 50px;
   padding-bottom: 8px;

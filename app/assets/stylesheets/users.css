@@ -3,14 +3,16 @@
   height: 13px;
 }
 
-.links a {
+.links a,
+.return-link {
   text-align: center;
   font-size: 1.2rem;
   color: #135183;
   margin: auto;
 }
 
-.links a:hover {
+.links a:hover,
+.return-link:hover {
   color: var(--light-blue);
 }
 
@@ -19,11 +21,13 @@
   margin: 100px auto;
 }
 
-.user-greeting-text {
+.user-greeting-text,
+.list-title-text {
   padding-bottom: 12px;
 }
 
-.user-profile-container .user-events {
+.user-profile-container .user-events,
+.user-index-container .user-details {
   display: flex;
   justify-content: space-between;
   margin: 30px;
@@ -48,4 +52,30 @@
 .user-profile-container .event-link a {
   text-decoration: none;
   color: inherit;
+}
+
+.user-index-container {
+  width: 60%;
+  margin: 50px auto;
+  padding: 25px;
+  background-color: var(--grey-event-card-background);
+  box-shadow: 0px 0px 3px 1px var(--black-box-shadow);
+}
+
+.user-index-container .user-details {
+  width: 45%;
+  margin: 30px auto;
+  align-items: center;
+}
+
+.user-index-container .user-name {
+  font-size: 1.35rem;
+}
+
+.user-index-container .invite-btn {
+  background-color: var(--blue-btn);
+}
+
+.user-index-container .cancel-invite-btn {
+  background-color: var(--red);
 }

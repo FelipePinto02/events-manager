@@ -1,18 +1,25 @@
-<h1>Available Users:</h1>
+<%= render 'shared/header' %>
 
-<% @users.each do |user| %>
-  <div class="user-details">
+<div class="user-index-container">
+  <%= link_to 'Return', event_path(params[:event_id]), class: 'return-link' %>
+
+  <div class="user-list">
+    <div class="list-title">
+      <h1 class="list-title-text">Available Users:</h1>
+    </div>
+    <% @users.each do |user| %>
     <% next if user == current_user %>
 
-    <%= user.username %>
-    <% if Event.find(params[:event_id]).attendees.include? user %>
-      <% attendance = EventAttendance.find_by(attendee_id: user.id, attended_event_id: params[:event_id]) %>
-      <%= button_to 'Cancel Invite', event_attendance_path(id: attendance.id, event_id: params[:event_id], user_id: user.id), method: :delete %>
-    <% else %>
-      <%= button_to 'Invite', event_attendances_path(event_id: params[:event_id], user_id: user.id) %>
-    <% end %>
-
+    <div class="user-details">
+      <p class="user-name"><%= user.username %></p>
+      <% if Event.find(params[:event_id]).attendees.include? user %>
+        <% attendance = EventAttendance.find_by(attendee_id: user.id, attended_event_id: params[:event_id]) %>
+        <%= button_to 'Cancel Invite', event_attendance_path(id: attendance.id, event_id: params[:event_id], user_id: user.id), class: 'cancel-invite-btn', method: :delete %>
+      <% else %>
+        <%= button_to 'Invite', event_attendances_path(event_id: params[:event_id], user_id: user.id), class: 'invite-btn' %>
+      <% end %>
+    </div>
+  <% end %>
   </div>
-<% end %>
 
-<%= link_to 'Return', event_path(params[:event_id]) %>
+</div>

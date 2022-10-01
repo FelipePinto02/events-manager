@@ -1,7 +1,7 @@
 <div class="attendees">
   <p>Event Attendees:</p>
   <% if event.attendees.accepted.empty? %>
-    <p class="details-text">No One</p>
+    <p class="details-text">No Confirmed Invites</p>
   <% end %>
   <% event.attendees.accepted.each do |attendee| %>
     <p class="details-text"> <%= attendee.username %> </p>
@@ -9,8 +9,8 @@
   </div>
   <div class="invited">
   <p>Invited Guests:</p>
-  <% if @event.attendees.empty? %>
-    <p class="details-text">No One</p>
+  <% if @event.attendees.invited.empty? %>
+    <p class="details-text">No Pending Invites</p>
   <% end %>
   <% event.attendees.invited.each do |attendee| %>
     <p class="details-text"> <%= attendee.username %> </p>
