@@ -130,3 +130,18 @@ input[type="submit"]:hover {
   border: 1px solid var(--orange);
   outline: none;
 }
+
+.success,
+.alert {
+  color: midnightblue;
+  padding: 10px 15px;
+  font-size: 1.1rem;
+}
+
+.success {
+  background-color: #80ed80b8;
+}
+
+.alert {
+  background-color: #e7484887;
+}
