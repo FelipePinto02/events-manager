@@ -1,0 +1,14 @@
+<div class="header-container">
+  <header>
+  <%= link_to root_path do %><h1 class="app-title">Events Manager</h1><% end %>
+  <nav>
+    <% if user_session %>
+      <button class="profile-btn"><%= link_to current_user.username, current_user %></button>
+      <button class="logout-btn"><%= link_to "Logout", destroy_user_session_path, method: :delete %></button>
+    <% else %>
+      <button class="login-btn"><%= link_to 'Login', new_user_session_path %></button>
+      <button class=sign-up-btn><%= link_to 'Sign Up', new_user_registration_path %></button>
+    <% end %>
+  </nav>
+  </header>
+</div>

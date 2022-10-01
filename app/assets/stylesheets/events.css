@@ -3,8 +3,8 @@
   justify-content: space-evenly;
   width: 60%;
   margin: 60px auto 0px;
-  background-color: #d7dee542;
-  box-shadow: 0px 0px 3px 1px #00000033;
+  background-color: var(--grey-event-card-background);
+  box-shadow: 0px 0px 3px 1px var(--black-box-shadow);
   border-radius: 10px;
   max-height: 800px;
 }
@@ -42,7 +42,7 @@
 }
 
 .events-index-container .card-title {
-  border-bottom: 0.8px solid #808080ab;
+  border-bottom: 0.8px solid var(--grey-border);
 }
 
 .events-index-container .event-name {
@@ -57,7 +57,7 @@
 .events-index-container .card-bottom {
   display: flex;
   justify-content: space-between;
-  border-top: 0.8px solid #808080ab;
+  border-top: 0.8px solid var(--grey-border);
 }
 
 .events-index-container .date,
@@ -71,15 +71,15 @@
 }
 
 .events-index-container .create-event {
-  background-color: #a8c3f3;
+  background-color: var(--blue-btn);
 }
 
 .events-show-container .event-container {
   width: 50%;
   margin: 50px auto;
   text-align: center;
-  background-color: #e4f0fb3d;
-  box-shadow: 0px 0px 3px 1px #00000033;
+  background-color: var(--grey-event-card-background);
+  box-shadow: 0px 0px 3px 1px var(--black-box-shadow);
   position: relative;
 }
 
@@ -88,7 +88,7 @@
 .events-show-container .event-third-section {
   margin: 0px 20px 40px;
   padding: 60px 0px;
-  border-bottom: 0.8px solid #808080ab;
+  border-bottom: 0.8px solid var(--grey-border);
 }
 
 .events-show-container .event-first-section {
@@ -136,7 +136,7 @@
   width: 20%;
   padding: 15px;
   margin-bottom: 25px;
-  background-color: #a8c3f3;
+  background-color: var(--blue-btn);
   font-size: 1.3rem;
 }
 

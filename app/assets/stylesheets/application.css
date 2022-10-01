@@ -20,6 +20,13 @@
   box-sizing: border-box;
 }
 
+:root {
+  --blue-btn: #a8c3f3;
+  --grey-border: #808080ab;
+  --black-box-shadow: #00000033;
+  --grey-event-card-background: #d7dee542;
+}
+
 body {
   background-color: #f0f8ff36;;
 }
