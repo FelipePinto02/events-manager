@@ -14,13 +14,13 @@
     </div>
     <div class="upcoming-events">
       <h3 class="user-events-title">Your upcoming invitations:</h3>
-      <% @user.attended_events.future.each do |event| %>
+      <% @future_events.each do |event| %>
         <p class="event-link"><%= link_to event.name, event %></p>
       <% end %>
     </div>
     <div class="past-events">
       <h3 class="user-events-title">Your past invitations:</h3>
-      <% @user.attended_events.past.each do |event| %>
+      <% @past_events.each do |event| %>
         <p class="event-link"><%= link_to event.name, event %></p>
       <% end %>
     </div>

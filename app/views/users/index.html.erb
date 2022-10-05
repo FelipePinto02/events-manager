@@ -1,7 +1,7 @@
 <%= render 'shared/header' %>
 
 <div class="user-index-container">
-  <%= link_to 'Return', event_path(params[:event_id]), class: 'return-link' %>
+  <%= link_to 'Return', event_path(@event_id), class: 'return-link' %>
 
   <div class="user-list">
     <div class="list-title">
@@ -12,11 +12,11 @@
 
     <div class="user-details">
       <p class="user-name"><%= user.username %></p>
-      <% if Event.find(params[:event_id]).attendees.include? user %>
-        <% attendance = EventAttendance.find_by(attendee_id: user.id, attended_event_id: params[:event_id]) %>
-        <%= button_to 'Cancel Invite', event_attendance_path(id: attendance.id, event_id: params[:event_id], user_id: user.id), class: 'cancel-invite-btn', method: :delete %>
+      <% if Event.find(@event_id).attendees.include? user %>
+        <% attendance = EventAttendance.find_by(attendee_id: user.id, attended_event_id: @event_id) %>
+        <%= button_to 'Cancel Invite', event_attendance_path(id: attendance.id, event_id: @event_id, user_id: user.id), class: 'cancel-invite-btn', method: :delete %>
       <% else %>
-        <%= button_to 'Invite', event_attendances_path(event_id: params[:event_id], user_id: user.id), class: 'invite-btn' %>
+        <%= button_to 'Invite', event_attendances_path(event_id: @event_id, user_id: user.id), class: 'invite-btn' %>
       <% end %>
     </div>
   <% end %>
